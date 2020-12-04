@@ -1,0 +1,19 @@
+body {
+    background: aquamarine;
+}
+
+#wrapper {
+    background: #fafafa;
+    width:600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#customer-table {
+    width: 100%;
+}
+
+#error {
+    color: red;
+    font-weight: bold;
+}
