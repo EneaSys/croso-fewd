@@ -2,44 +2,22 @@ body {
     background: aquamarine;
 }
 
-#customer-table {
-    border: 3px solid black;
-    margin: auto;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
+
+
+
+
+
+
+#wrapper {
+    width: 600px;
+    margin: 0 auto;
+    background: #fafafa;
+    padding: 15px;
 }
 
-th {
-    border: 1px solid black;
-    color: red;
-}
 
-td {
-    border: 1px solid black;
-}
 
-#create-new-customer {
-    display: block;
-    margin: auto;
-}
 
-.form-element {
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
-
-#new-client-created {
-    color: red;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
-
-#text-registration {
-    margin: 5px;
-    text-align: center;
-}
 
 #message {
     font-weight: bold;
@@ -57,16 +35,50 @@ td {
     color: red;
 }
 
+
+
+
+
+#customer-table table {
+    width: 100%;
+    margin: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#customer-table th {
+    border: 1px solid black;
+    color: red;
+}
+
+#customer-table td {
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
 #new-customer-form {
     margin: 5px auto 0;
 }
 
-label,
-input {
-    display: block;
-    width: 550px;
+#new-customer-form .form-element {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
 }
 
-.sex-element {
+#new-customer-form  label, input {
+    width: 100%;
+}
+
+#new-customer-form  .sex-element {
     width: 50px !important;
 }
