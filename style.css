@@ -9,11 +9,22 @@ body {
     padding: 20px;
 }
 
-#customer-table {
+#customer-table table {
     width: 100%;
 }
 
-#error {
-    color: red;
+#message {
     font-weight: bold;
+}
+
+
+
+.success {
+    color: green;
+}
+.warning {
+    color: yellow;
+}
+.error {
+    color: red;
 }
