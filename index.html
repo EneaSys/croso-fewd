@@ -9,8 +9,6 @@
 
 <body>
     <div id="wrapper">
-        <button onclick="createCustomer()">Crea cliente</button>
-        <hr>
         <table id="customer-table">
             <thead>
                 <tr>
@@ -18,56 +16,68 @@
                     <th>Cognome</th>
                     <th>Sesso</th>
                     <th>Nazione</th>
-                    <th>mail</th>
+                    <th>E-mail</th>
                 </tr>
             </thead>
             <tbody id="user-table-body"></tbody>
         </table>
-        <div id="new-customer">
-            <span id="error"></span>
-            <form id="new-customer-form" onsubmit="return newCustomerSubmit(this)">
-                <div class="form-element">
-                    <label>Nome</label>
-                    <input type="text" name="firstname" required value="nome" />
-                </div>
-                <div class="form-element">
-                    <label>Cognome</label>
-                    <input type="text" name="lastname" required value="nome" />
-                </div>
-                <div class="form-element">
-                    <label>Sesso</label>
-                    <input type="radio" name="sex" value="M" required checked />M
-                    <input type="radio" name="sex" value="F" required />F
-                </div>
-                <div class="form-element">
-                    <label>Nazione</label>
-                    <select name="nation" required>
-                        <option value="italy">Italia</option>
-                        <option value="spain">Spagna</option>
-                        <option value="usa">USA</option>
-                    </select>
-                </div>
-                <div class="form-element">
-                    <label>Mail</label>
-                    <input type="email" name="mail" required value="a@b" />
-                </div>
-                <div class="form-element">
-                    <label>Password</label>
-                    <input type="password" name="password" required value="123"/>
-                </div>
-                <div class="form-element">
-                    <label>Conferma password</label>
-                    <input type="password" name="confirm-password" required value="123" />
-                </div>
-                <div class="form-element">
-                    <input type="submit" value="Crea" />
-                </div>
-            </form>
-            <br>
-            <button onclick="loadCustomersInTable()">Annulla</button>
-        </div>
+        <br>
+        <button id="create-new-customer" onclick="createCustomer()">Crea nuovo cliente</button>
     </div>
-    
+    <div id="new-customer">
+        <span id="error"></span>
+        <form id="new-customer-form" onsubmit="return newCustomerSubmit(this)">
+            <div class="form-element">
+                <label>Nome</label>
+                <input type="text" name="firstname" required/>
+            </div>
+            <br>
+            <div class="form-element">
+                <label>Cognome</label>
+                <input type="text" name="lastname" required/>
+            </div>
+            <br>
+            <div class="form-element">
+                <label>Sesso</label>
+                <input type="radio" name="sex" required value="M" />M
+                <input type="radio" name="sex" required value="F" />F
+            </div>
+            <br>
+            <div class="form-element">
+                <label>Nazione</label>
+                <select name="nation" required>
+                        <option value="Italia">Italia</option>
+                        <option value="Spagna">Spagna</option>
+                        <option value="USA">USA</option>
+                    </select>
+            </div>
+            <br>
+            <div class="form-element">
+                <label>Mail</label>
+                <input type="email" name="mail" required/>
+            </div>
+            <br>
+            <div class="form-element">
+                <label>Password</label>
+                <input type="password" name="password" required/>
+            </div>
+            <br>
+            <div class="form-element">
+                <label>Conferma password</label>
+                <input type="password" name="confirm-password" required/>
+            </div>
+            <br>
+            <div class="form-element">
+                <input type="submit" value="Crea" />
+                <button onclick="main()">Annulla</button>
+            </div>
+        </form>
+        <span id="new-client-created">Nuovo cliente creato!</span>
+        <br>
+        <br>
+        <button onclick="main()">Indietro</button>
+    </div>
+
     <script>
         main();
     </script>
