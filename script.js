@@ -1,6 +1,6 @@
 function main() {
     loadCustomersInTable();
-    getCitys();
+    //getCitys();
 }
 
 
@@ -8,7 +8,6 @@ function main() {
 function loadCustomersInTable() {
     document.getElementById("customer-table").style.display = "block";
     document.getElementById("new-customer").style.display = "none";
-
 
     // prendo l'elenco dei clienti
     var customerList = getCustomers();
@@ -34,8 +33,7 @@ function loadCustomersInTable() {
 
 function createCustomer() {
     document.getElementById("new-customer").style.display = "block";
-    document.getElementById("wrapper").style.display = "none";
-    document.getElementById("new-client-created").style.display = "none";
+    document.getElementById("customer-table").style.display = "none";
 }
 
 
@@ -68,8 +66,6 @@ function newCustomerSubmit(elementForm) {
 
     loadCustomersInTable();
 
-    document.getElementById("new-client-created").style.display = "block";
-
     return false;
 }
 
@@ -97,6 +93,7 @@ function showMessage(message, type, timeout) {
     }
 
     messageElement.style.display = "block";
+
     setTimeout(function() {
         messageElement.style.display = "none";
     }, timeout);
