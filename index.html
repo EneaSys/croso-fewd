@@ -2,55 +2,75 @@
 
 <head>
     <title>PippoJet - Elenco clienti</title>
-
     <link rel="stylesheet" href="style.css" />
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
     <div id="wrapper">
-        <table id="customer-table">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Cognome</th>
-                    <th>Sesso</th>
-                    <th>Nazione</th>
-                    <th>E-mail</th>
-                </tr>
-            </thead>
-            <tbody id="user-table-body"></tbody>
-        </table>
-        <br>
-        <button id="create-new-customer" onclick="createCustomer()">Crea nuovo cliente</button>
-    </div>
-    <div id="new-customer">
-        <span id="error"></span>
-        <form id="new-customer-form" onsubmit="return newCustomerSubmit(this)">
-            <div class="form-element">
-                <label>Nome</label>
-                <input type="text" name="firstname" required/>
-            </div>
-            <br>
-            <div class="form-element">
-                <label>Cognome</label>
-                <input type="text" name="lastname" required/>
-            </div>
-            <br>
-            <div class="form-element">
-                <label>Sesso</label>
-                <input type="radio" name="sex" required value="M" />M
-                <input type="radio" name="sex" required value="F" />F
-            </div>
-            <br>
-            <div class="form-element">
-                <label>Nazione</label>
-                <select name="nation" required>
-                        <option value="Italia">Italia</option>
-                        <option value="Spagna">Spagna</option>
-                        <option value="USA">USA</option>
+        <button onclick="createCustomer()">Crea cliente</button>
+        <hr>
+        <span id="message"></span>
+        <div id="customer-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Cognome</th>
+                        <th>Sesso</th>
+                        <th>Nazione</th>
+                        <th>mail</th>
+                    </tr>
+                </thead>
+                <tbody id="user-table-body"></tbody>
+            </table>
+        </div>
+        <div id="new-customer">
+            <form id="new-customer-form" onsubmit="return newCustomerSubmit(this)">
+                <div id="text-registration">
+                    <h4>Iscriviti al sito PippoJet</h4>
+                </div>
+                <div class="form-element">
+                    <label>Nome</label>
+                    <input type="text" name="firstname" required placeholder="Nome" />
+                </div>
+                <div class="form-element">
+                    <label>Cognome</label>
+                    <input type="text" name="lastname" required placeholder="Cognome" />
+                </div>
+                <div class="form-element">
+                    <label class="sex-element">Sesso</label>
+                    <input class="sex-element" type="radio" name="sex" value="M" required checked />M
+                    <input class="sex-element" type="radio" name="sex" value="F" required />F
+                </div>
+                <div class="form-element">
+                    <label>Nazione</label>
+                    <select name="nation" required>
+                        <option>Scegli...</option>
+                        <option value="it">Italia</option>
+                        <option value="es">Spagna</option>
+                        <option value="us">USA</option>
                     </select>
-            </div>
+                </div>
+                <div class="form-element">
+                    <label>Mail</label>
+                    <input type="email" name="mail" required placeholder="e-mail" />
+                </div>
+                <div class="form-element">
+                    <label>Password</label>
+                    <input type="password" name="password" required />
+                </div>
+                <div class="form-element">
+                    <label>Conferma password</label>
+                    <input type="password" name="confirm-password" required />
+                </div>
+                <div class="form-element">
+                    <input type="submit" value="Crea" />
+                    <input onclick="loadCustomersInTable()" type="button" value="Indietro" />
+                </div>
+            </form>
             <br>
             <div class="form-element">
                 <label>Mail</label>
@@ -71,16 +91,16 @@
                 <input type="submit" value="Crea" />
                 <button onclick="main()">Annulla</button>
             </div>
-        </form>
-        <span id="new-client-created">Nuovo cliente creato!</span>
-        <br>
-        <br>
-        <button onclick="main()">Indietro</button>
-    </div>
+            </form>
+            <span id="new-client-created">Nuovo cliente creato!</span>
+            <br>
+            <br>
+            <button onclick="main()">Indietro</button>
+        </div>
 
-    <script>
-        main();
-    </script>
+        <script>
+            main();
+        </script>
 </body>
 
 </html>

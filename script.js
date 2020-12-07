@@ -1,11 +1,13 @@
 function main() {
-    loadCustomersInTable()
-    document.getElementById("wrapper").style.display = "block";
-    document.getElementById("new-customer").style.display = "none";
+    loadCustomersInTable();
+    getCitys();
 }
 
+
+
 function loadCustomersInTable() {
-    document.getElementById("error").innerHTML = "";
+    document.getElementById("customer-table").style.display = "block";
+    document.getElementById("new-customer").style.display = "none";
 
 
     // prendo l'elenco dei clienti
@@ -36,6 +38,8 @@ function createCustomer() {
     document.getElementById("new-client-created").style.display = "none";
 }
 
+
+
 function newCustomerSubmit(elementForm) {
     var customer = {
         "firstname": elementForm.elements["firstname"].value,
@@ -46,25 +50,61 @@ function newCustomerSubmit(elementForm) {
         "password": elementForm.elements["password"].value,
     };
 
-    var error = document.getElementById("error");
-
     var confirmPassword = elementForm.elements["confirm-password"].value;
     if (customer.password != confirmPassword) {
-        error.innerHTML = "Cretino, hai messo 2 password diverse.";
+        showMessage("Cretino, hai messo 2 password diverse.", 3, 7000);
         return false;
     }
 
     if (customer.nation == "usa") {
-        error.innerHTML = "Cretino, trovati una compagnia della tua nazione.";
+        showMessage("Cretino, trovati una compagnia della tua nazione.", 3, 7000);
         return false;
     }
 
     addCustomer(customer);
+    elementForm.reset();
+
+    showMessage("Utente creato con successo!", 1, 3000);
+
+    loadCustomersInTable();
 
     document.getElementById("new-client-created").style.display = "block";
 
     return false;
 }
+
+
+
+
+
+function showMessage(message, type, timeout) {
+    var messageElement = document.getElementById("message");
+
+    messageElement.innerHTML = message;
+
+    messageElement.classList.remove("success", "warning", "error");
+
+    switch (type) {
+        case 1: // success
+            messageElement.classList.add("success");
+            break;
+        case 2: // warning
+            messageElement.classList.add("warning");
+            break;
+        default: // error
+            messageElement.classList.add("error");
+            break;
+    }
+
+    messageElement.style.display = "block";
+    setTimeout(function() {
+        messageElement.style.display = "none";
+    }, timeout);
+}
+
+
+
+
 
 function getCustomers() {
     return customerList;
@@ -77,6 +117,10 @@ function setCustomers(customers) {
 function addCustomer(customer) {
     customerList.push(customer);
 }
+
+
+
+
 
 customerList = [{
     "firstname": "Giacomo",
@@ -100,3 +144,24 @@ customerList = [{
     "mail": "mr@gmail.com",
     "password": "m789"
 }, ];
+
+
+
+
+
+function getCitys() {
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://wft-geo-db.p.rapidapi.com/v1/geo/countries",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "54e471af57msh8ba85042277b3c7p1a5c0bjsn6f4704cdbd32",
+            "x-rapidapi-host": "wft-geo-db.p.rapidapi.com"
+        }
+    };
+
+    $.ajax(settings).done(function(response) {
+        console.log(response);
+    });
+}

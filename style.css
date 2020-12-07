@@ -36,7 +36,37 @@ td {
     font-weight: bold;
 }
 
-#error {
-    color: red;
+#text-registration {
+    margin: 5px;
+    text-align: center;
+}
+
+#message {
     font-weight: bold;
+}
+
+.success {
+    color: green;
+}
+
+.warning {
+    color: yellow;
+}
+
+.error {
+    color: red;
+}
+
+#new-customer-form {
+    margin: 5px auto 0;
+}
+
+label,
+input {
+    display: block;
+    width: 550px;
+}
+
+.sex-element {
+    width: 50px !important;
 }
