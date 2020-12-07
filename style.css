@@ -1,19 +1,32 @@
 body {
     background: aquamarine;
 }
-
 #wrapper {
     background: #fafafa;
     width:600px;
     margin: 0 auto;
     padding: 20px;
-}
+}   
 
 #customer-table {
     width: 100%;
+}
+#text-registration{
+    margin: 5px;
+    text-align: center;
 }
 
 #error {
     color: red;
     font-weight: bold;
+}
+#new-customer-form{
+    margin: 5px auto 0;
+}
+label,input{
+    display: block;
+    width: 550px;
+}
+.sex-element{
+    width: 50px !important;
 }

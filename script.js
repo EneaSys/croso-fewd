@@ -113,3 +113,8 @@ customerList = [
     },
 ];
 
+
+function getCitys(){
+    const settings = 
+}
+
