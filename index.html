@@ -4,14 +4,22 @@
     <title>PippoJet - Elenco clienti</title>
     <link rel="stylesheet" href="style.css" />
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
     <div id="wrapper">
         <button onclick="createCustomer()">Crea cliente</button>
+        <br><br>
+        <div id="login-box">
+            <input type="text" placeholder="Username" id="user">
+            <br><br>
+            <input type="text" placeholder="Password" id="pass">
+            <br><br>
+            <button id="login-button" onclick="login()">Login</button>
+        </div>
+        <br>
         <hr>
         <span id="message"></span>
 
@@ -48,9 +56,9 @@
                     <label>Nazione</label>
                     <select name="nation" required>
                         <option>Scegli...</option>
-                        <option value="italy">Italia</option>
-                        <option value="espana">Spagna</option>
-                        <option value="usa">USA</option>
+                        <option value="Italia">Italia</option>
+                        <option value="Spagna">Spagna</option>
+                        <option value="USA">USA</option>
                     </select>
                 </div>
                 <div class="form-element">

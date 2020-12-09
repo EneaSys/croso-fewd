@@ -6,6 +6,7 @@ function main() {
 
 
 function loadCustomersInTable() {
+    document.getElementById("login-box").style.display = "block";
     document.getElementById("customer-table").style.display = "block";
     document.getElementById("new-customer").style.display = "none";
 
@@ -32,6 +33,7 @@ function loadCustomersInTable() {
 }
 
 function createCustomer() {
+    document.getElementById("login-box").style.display = "none";
     document.getElementById("new-customer").style.display = "block";
     document.getElementById("customer-table").style.display = "none";
 }
@@ -54,7 +56,7 @@ function newCustomerSubmit(elementForm) {
         return false;
     }
 
-    if (customer.nation == "usa") {
+    if (customer.nation == "USA") {
         showMessage("Cretino, trovati una compagnia della tua nazione.", 3, 7000);
         return false;
     }
@@ -115,9 +117,22 @@ function addCustomer(customer) {
     customerList.push(customer);
 }
 
+function login() {
 
+    var user = document.getElementById("user");
+    var pass = document.getElementById("pass");
 
+    for (var x = 0; x < customerList.length; x++) {
 
+        if ((customerList.mail[x] == user.value) && (customerList.password[x] == pass.value)) {
+            showMessage("Login effettuato!", 1, 3000);
+            return false;
+        } else {
+            showMessage("Errore di login!", 3, 3000);
+            return false;
+        }
+    }
+}
 
 customerList = [{
     "firstname": "Giacomo",

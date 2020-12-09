@@ -2,22 +2,16 @@ body {
     background: aquamarine;
 }
 
-
-
-
-
-
-
 #wrapper {
-    width: 600px;
+    width: fit-content;
     margin: 0 auto;
     background: #fafafa;
     padding: 15px;
 }
 
-
-
-
+#login-button {
+    float: right;
+}
 
 #message {
     font-weight: bold;
@@ -34,10 +28,6 @@ body {
 .error {
     color: red;
 }
-
-
-
-
 
 #customer-table table {
     width: 100%;
@@ -57,15 +47,6 @@ body {
     border: 1px solid black;
 }
 
-
-
-
-
-
-
-
-
-
 #new-customer-form {
     margin: 5px auto 0;
 }
@@ -75,10 +56,11 @@ body {
     font-weight: bold;
 }
 
-#new-customer-form  label, input {
+#new-customer-form label,
+input {
     width: 100%;
 }
 
-#new-customer-form  .sex-element {
+#new-customer-form .sex-element {
     width: 50px !important;
 }
