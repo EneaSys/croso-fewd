@@ -1,3 +1,4 @@
+
 function main() {
     loadCustomersInTable();
     //getCitys();
@@ -116,7 +117,54 @@ function addCustomer(customer) {
 }
 
 
+function getDataLogin(customerList, username, password){
+    var customerList = getCustomers();
+    var username = document.getElementById("username-login").value;
+    var password = document.getElementById("password-login").value; 
+    var i;
+    var valueLogin = 0;
+    var valuePassword = 0;
+    var value;
+    for(i=0;i<customerList.length;i++){
+        if(customerList[i].mail==username){
+            valueLogin = 1;
+            break;
+        }
+    }
 
+    for(i=0;i<customerList.length;i++){
+        if(customerList[i].password==password){
+            valuePassword = 1;
+            break;
+        }
+    }
+
+    value = valueLogin + valuePassword;
+
+
+    switch(value){
+        case 0:
+            return 0;
+        break;
+        case 1: 
+         return 0;
+        break;
+        case 2:
+            return customerList[i];
+    }
+}
+
+function messageLogin(){
+    var customer = getDataLogin();
+    var username = customer.firstname;
+    var text = "Benvenuto " + username;
+
+    if(customer==0){
+        showMessage("LOGIN ERRATO", 3, 3000);
+    }else{
+        showMessage(text, 1, 3000);
+    }
+}
 
 
 customerList = [{
@@ -161,4 +209,4 @@ function getCitys() {
     $.ajax(settings).done(function(response) {
         console.log(response);
     });
-}
+};
