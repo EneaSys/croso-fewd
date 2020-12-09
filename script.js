@@ -94,7 +94,7 @@ function showMessage(message, type, timeout) {
 
     messageElement.style.display = "block";
 
-    setTimeout(function() {
+    setTimeout(function () {
         messageElement.style.display = "none";
     }, timeout);
 }
@@ -140,7 +140,7 @@ customerList = [{
     "nation": "Pagani",
     "mail": "mr@gmail.com",
     "password": "m789"
-}, ];
+},];
 
 
 
@@ -158,7 +158,50 @@ function getCitys() {
         }
     };
 
-    $.ajax(settings).done(function(response) {
+    $.ajax(settings).done(function (response) {
         console.log(response);
     });
+}
+
+
+
+
+function searchUser(email) {
+    // prendo l'elenco dei clienti
+    var customers = getCustomers();
+
+    for (var i = 0; i < customers.length; i++) {
+        var customer = customers[i];
+
+        if (customer.mail == email) {
+            return customer;
+        }
+    }
+}
+
+
+/**
+ * 
+ * 
+ *     console.log("la customer list è:", customers);
+    if (customers[0].mail == email) {
+        console.log("la mail corrisponde");
+    }
+    else {
+        console.log("la mail non  corrisponde");
+    }
+ */
+
+function doLogin(elementForm) {
+    var loginEmail = elementForm.elements["email"].value;
+
+    var utenteTrovato = searchUser(loginEmail);
+
+    var loginPassword = elementForm.elements["password"].value;
+    console.log("corrispondono solo se la password inserita corrisponde a quella inserita dall'utente ");
+
+console.log(utenteTrovato);
+
+
+    return false;
 }

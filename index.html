@@ -11,7 +11,20 @@
 
 <body>
     <div id="wrapper">
+        <button onclick="searchUser('n@c.it')">Cerca cliente che ha come mail g@t.it</button>
+
+
+
+
         <button onclick="createCustomer()">Crea cliente</button>
+        <form id="login" onsubmit="return doLogin(this)">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+            <input type="submit" value="Login">
+            <span id="message2"></span>
+        </form>
         <hr>
         <span id="message"></span>
 
