@@ -1,16 +1,14 @@
-function main() {
+function main(){
     loadCustomersInTable();
     //getCitys();
 }
 
-
-
-function loadCustomersInTable() {
+function loadCustomersInTable(){
     document.getElementById("customer-table").style.display = "block";
     document.getElementById("new-customer").style.display = "none";
 
     // prendo l'elenco dei clienti
-    var customerList = getCustomers();
+    var customerList=getCustomers();
 
     var tbody = "";
 
@@ -72,7 +70,6 @@ function newCustomerSubmit(elementForm) {
 
 
 
-
 function showMessage(message, type, timeout) {
     var messageElement = document.getElementById("message");
 
@@ -101,9 +98,7 @@ function showMessage(message, type, timeout) {
 
 
 
-
-
-function getCustomers() {
+function getCustomers(){
     return customerList;
 }
 
@@ -114,6 +109,32 @@ function setCustomers(customers) {
 function addCustomer(customer) {
     customerList.push(customer);
 }
+
+// log in 
+
+function showMessage(username,password) {
+    var segnalElement = document.getElementById("segnal");
+
+    segnalElement.innerHTML = segnal;
+
+    segnalElement.classList.remove("success", "warning", "error");
+
+    var confirmLogin = elementForm.elements["confirm-login"].value;
+    if (segnalElement!= customerList) {
+        showMessage("Wrong Password", 3, 7000);
+        return false;
+    }
+
+    if (customer.password == "customerList") {
+        showMessage("Welcome!", 3, 7000);
+        return customerList;
+    }
+
+    function getCustomers(){
+        return customerList;
+    }
+
+
 
 
 
@@ -161,4 +182,4 @@ function getCitys() {
     $.ajax(settings).done(function(response) {
         console.log(response);
     });
-}
+} } 

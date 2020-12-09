@@ -1,12 +1,7 @@
 body {
     background: aquamarine;
+    overflow: auto;
 }
-
-
-
-
-
-
 
 #wrapper {
     width: 600px;
@@ -14,9 +9,6 @@ body {
     background: #fafafa;
     padding: 15px;
 }
-
-
-
 
 
 #message {
@@ -35,9 +27,19 @@ body {
     color: red;
 }
 
+#approvelogin {
+    width: 400px;
+    margin: 0 auto;
+    background: #fafafa;
+    padding: 15px;
+    float: right;
 
+}
 
-
+#approvelogin label{
+     font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
 
 #customer-table table {
     width: 100%;
@@ -56,12 +58,6 @@ body {
 #customer-table td {
     border: 1px solid black;
 }
-
-
-
-
-
-
 
 
 

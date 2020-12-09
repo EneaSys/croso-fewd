@@ -15,6 +15,19 @@
         <hr>
         <span id="message"></span>
 
+<div id="approvelogin"> 
+    <label>Log in</label>
+    <br>
+    <br>
+    <input type="text" name="username" required placeholder="Username"/>
+    <input type="text" name="password" required placeholder="Password" /> 
+    <br>
+    <br>
+    <button onclick="createCustomer()">Click here</button>
+    <span id="segnal"></span>
+    
+</div>
+
         <div id="customer-table">
             <table>
                 <thead>
@@ -75,9 +88,8 @@
             <button onclick="main()">Indietro</button>
         </div>
     </div>
-    <script>
-        main();
-    </script>
+    
+    <script>main();</script>
 </body>
 
 </html>
