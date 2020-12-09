@@ -4,14 +4,26 @@
     <title>PippoJet - Elenco clienti</title>
     <link rel="stylesheet" href="style.css" />
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
     <div id="wrapper">
         <button onclick="createCustomer()">Crea cliente</button>
+        <div id="login-button">
+            <button onclick="verifyUserPwd()" id="login" type="button" value="Login">Login</button>
+        </div>
+        <div id="user-psw">
+
+            <form>
+                <label for="username" class="login-name">Username</label>
+                <input type="text" id="username" name="username" class="login-name">
+                <label for="pwd" class="login-pwd">Password</label>
+                <input type="password" id="pwd" name="pwd" class="login-pwd">
+            </form>
+
+        </div>
         <hr>
         <span id="message"></span>
 

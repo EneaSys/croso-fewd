@@ -143,6 +143,21 @@ customerList = [{
 }, ];
 
 
+function verifyUserPwd() {
+    var usernameElement = document.getElementById("username");
+    var pwdElement = document.getElementById("pwd");
+
+    for (var i = 0; i < customerList.length; i++) {
+        var customer = customerList[i];
+
+        if (usernameElement == customer.mail) {
+            showMessage("Login Effettuato")
+            return customerList[i];
+        }
+    }
+    console.log("ciao");
+};
+
 
 
 
